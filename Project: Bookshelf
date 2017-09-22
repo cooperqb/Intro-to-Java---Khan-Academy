@@ -1,0 +1,27 @@
+var book = [
+{title: "The Giver", stars: 4, author: "Old Man"},
+{title: "Communist Manifesto", stars: 5, author: "Karl Marx"}
+];
+
+// draw shelf
+fill(173, 117, 33);
+rect(0, 120, width, 10);
+
+for (var x = 0; x < book.length; x++)
+{
+    fill(214, 255, 219);
+    rect(10 + x * 100, 20, 90, 100);
+    fill(0, 0, 0);
+    textSize(18);
+    text(book[x].title, 15+x*100, 29, 70, 100);
+    textSize(13);
+    text(book[x].author, 15+x*100, 90, 67, 100);
+    
+    for(var z = 0; z < book.length; z++)
+    {
+        for (var i = 0; i < book[i].stars; i++) 
+        {
+            image(getImage("cute/Star"), 13 + i * 16, 90, 20, 30);
+        }
+    }    
+}
